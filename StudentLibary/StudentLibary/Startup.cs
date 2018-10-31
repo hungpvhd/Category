@@ -24,7 +24,7 @@ namespace StudentLibary
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<StudentContext>(opt =>
-                opt.UseInMemoryDatabase("Students"));
+                            opt.UseSqlServer(Configuration.GetConnectionString("MyConnectionString")));
             services.AddMvc();
         }
 
